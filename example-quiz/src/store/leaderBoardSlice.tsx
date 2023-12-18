@@ -4,7 +4,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { LeaderBoardState } from "./leaderBoardTypes";
 
 const initialState: LeaderBoardState = {
-	currentUser: { name: '', score: 0},
+	currentUser: '',
 	leaderBoard: [],
 };
 
@@ -13,8 +13,7 @@ const leaderBoardSlice = createSlice({
 	initialState,
 	reducers: {
 		setLeaderBoardScore: (state, action: PayloadAction<any>) => {
-			let leaderBoard = [...state.leaderBoard, { name: action.payload.name, score: action.payload.score }]
-			state.leaderBoard = leaderBoard
+			state.leaderBoard.push({ name: action.payload.name, score: action.payload.score })
 		},
 		setCurrentUser: (state, action: PayloadAction<any>) => {
 			state.currentUser = action.payload

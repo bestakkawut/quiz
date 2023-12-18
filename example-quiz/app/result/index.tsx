@@ -25,6 +25,9 @@ const Result = () => {
   };
 
   useEffect(() => {
+
+    if (leaderBoard.currentUser === '') { return; }
+
 		let countScore = 0;
     quiz.answerQuiz.forEach((answer: any) => {
       const correct = checkCorrectAnswer(answer);

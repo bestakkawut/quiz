@@ -8,6 +8,10 @@ const LeaderBoard = () => {
     (state: any) => state.leaderBoard.leaderBoard
   );
 
+  const sortedLeaderBoard = leaderBoard.slice(0).sort((a: any, b: any) => {
+    return b.score - a.score;
+  })
+
   return (
     <View>
       <Stack.Screen
@@ -42,7 +46,7 @@ const LeaderBoard = () => {
             </View>
           </View>
 
-          {leaderBoard.map((item: any, index: number) => (
+          {sortedLeaderBoard && sortedLeaderBoard.map((item: any, index: number) => (
             <View key={index} style={styles.row}>
               <View style={[styles.column, { width: "20%" }]}>
                 <TextColumn text={index + 1} />
