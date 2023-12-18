@@ -19,7 +19,7 @@ const LeaderBoard = () => {
           title: "Leader board",
           headerTitleAlign: "center",
           headerLeft: () => (
-            <Pressable onPress={() => router.push("/")}>
+            <Pressable onPress={() => router.replace("/")}>
               <AntDesign
                 name="arrowleft"
                 size={24}

@@ -90,7 +90,7 @@ const Quiz = () => {
 								),
 								headerLeft: () => (
 									<Pressable
-										onPress={() => router.push("/")}
+										onPress={() => router.replace("/")}
 									>
 										<AntDesign name='arrowleft' size={24} style={{color: '#fff', marginLeft: Platform.OS === 'web' ? 20 : 0 }} />
 									</Pressable>
@@ -101,7 +101,7 @@ const Quiz = () => {
             {!isQuizStart ? (
               <Pressable
                 style={styles.buttonPrimary}
-                onPress={() => router.push("/")}
+                onPress={() => router.replace("/")}
               >
                 <Text style={{ color: "#fff" }}>Back to home</Text>
               </Pressable>
